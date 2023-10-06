@@ -7,8 +7,6 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    public static AppData appData = AppData.getInstance();
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -16,14 +14,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        final int minWidth = 300;
-        final int minHeight = 600;
-        final int windowWidth = 800;
-        final int windowHeight = 600;
-
         UtilsViews.parentContainer.setStyle("-fx-font: 14 arial;");
-        UtilsViews.addView(getClass(), "Desktop", "assets/layout_desktop.fxml");
-        UtilsViews.addView(getClass(), "Mobile0", "assets/layout_mobile_0.fxml");
+        UtilsViews.addView(getClass(), "Normal", "assets/vista0.fxml");
 
         Scene scene = new Scene(UtilsViews.parentContainer);
         
@@ -31,16 +23,13 @@ public class Main extends Application {
         scene.widthProperty().addListener((ChangeListener<? super Number>) new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldWidth, Number newWidth) {
-                _setLayout(newWidth.intValue());
+                _setLayout();
             }
         });
 
         stage.setScene(scene);
-        stage.setTitle("NintendoDB");   //------------------Ej 1
-        stage.setMinWidth(minWidth);
-        stage.setWidth(windowWidth);
-        stage.setMinHeight(minHeight);
-        stage.setHeight(windowHeight);
+        stage.setTitle("Practica 2"); 
+        stage.setResizable(false);
         stage.show();
 
         // Add icon only if not Mac
@@ -50,11 +39,7 @@ public class Main extends Application {
         }
     }
 
-    private void _setLayout(int width) {
-        if (width < 600) {
-            UtilsViews.setView("Mobile0");
-        } else {
-            UtilsViews.setView("Desktop");
-        }
+    private void _setLayout() {
+        UtilsViews.setView("Normal");
     }
 }
