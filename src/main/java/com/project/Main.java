@@ -23,6 +23,7 @@ public class Main extends Application {
 
         UtilsViews.parentContainer.setStyle("-fx-font: 14 arial;");
         UtilsViews.addView(getClass(), "Normal", "/assets/view0.fxml");
+        UtilsViews.addView(getClass(), "Normal", "/assets/view1.fxml");
 
         Scene scene = new Scene(UtilsViews.parentContainer);
         

@@ -13,7 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 
-public class ControllerVista1 {
+public class ControllerVista1 implements initialize{
     
     @FXML
     Button vista1 = new Button();
@@ -21,7 +21,11 @@ public class ControllerVista1 {
     @FXML
     Button action1 = new Button();
 
+    private cambiarVista1() {
+        vista1.setOnAction(event -> {
+            UtilsViews.setViewAnimating(null);
+        });
+    }
     
-
 
 }
