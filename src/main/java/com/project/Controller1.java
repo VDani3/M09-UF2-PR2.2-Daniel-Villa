@@ -12,7 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-public class Controller1 implements initialize {
+public class Controller1{
 
     @FXML
     private Button button0, button1;
@@ -30,7 +30,7 @@ public class Controller1 implements initialize {
 
     @FXML
     private void animateToView0(ActionEvent event) {
-        UtilsViews.setViewAnimating("View0");
+        UtilsViews.setViewAnimating("Normal2");
     }
 
     @FXML

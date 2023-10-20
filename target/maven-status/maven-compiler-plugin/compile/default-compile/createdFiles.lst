@@ -1,7 +1,7 @@
-com/project/ControllerVista1.class
-com/project/Main.class
-com/project/Controller0.class
-com/project/Main$1.class
-com/project/Controller1.class
-com/project/initialize.class
-com/project/UtilsViews.class
+com\project\Main.class
+com\project\Main$1.class
+com\project\Controller0.class
+com\project\UtilsViews.class
+com\project\Controller1.class
+com\project\ControllerVista1.class
+com\project\initialize.class

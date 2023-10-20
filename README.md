@@ -1,6 +1,8 @@
-# Exemple de Threads a JavaFX #
+# Practica Threads JavaFX
+Daniel Villa Carmona
 
-En aquest projecte es pot veure dos exemples de com fer tasques en fils paral·lels fent servir FixedThreadPool i CompletableFuture a JavaFX
+# Recorda cambiar la versió de Java en el Pom
+
 
 ### Compilació i funcionament ###
 
