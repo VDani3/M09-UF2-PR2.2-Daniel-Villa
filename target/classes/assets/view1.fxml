@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="352.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.ControllerVista2">
@@ -31,145 +30,19 @@
             <Button fx:id="aturar" layoutX="429.0" layoutY="25.0" mnemonicParsing="false" onAction="#aturarImg" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #fa9696; -fx-border-color: #a65656; -fx-border-radius: 8; -fx-border-width: 2;" text="Aturar" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="25.0" />
             <Label layoutX="67.0" layoutY="95.0" text="Progrés" AnchorPane.bottomAnchor="189.00000000000003" AnchorPane.leftAnchor="67.0" />
             <ProgressBar layoutX="67.0" layoutY="113.0" prefHeight="24.0" prefWidth="444.0" progress="0.0" style="-fx-accent: #859624;" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="113.0" />
-            <AnchorPane layoutX="69.0" layoutY="152.0" prefHeight="143.0" prefWidth="454.0">
+            <AnchorPane fx:id="anchor1" layoutX="69.0" layoutY="152.0" prefHeight="143.0" prefWidth="454.0">
                <children>
-                  <HBox prefHeight="24.0" prefWidth="454.0" spacing="10.0">
-                     <children>
-                        <Pane fx:id="img1" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img2" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img3" layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img4" layoutX="34.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img5" layoutX="58.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img6" layoutX="82.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img7" layoutX="106.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img8" layoutX="130.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                     </children>
+                  <HBox fx:id="hb" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </HBox>
-                  <HBox layoutY="33.0" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
-                     <children>
-                        <Pane fx:id="img9" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img10" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img11" layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img12" layoutX="34.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img13" layoutX="58.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img14" layoutX="82.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img15" layoutX="106.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img16" layoutX="130.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                     </children>
+                  <HBox fx:id="hb2" layoutY="33.0" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </HBox>
-                  <HBox layoutY="66.0" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
-                     <children>
-                        <Pane fx:id="img17" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img18" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img19" layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img20" layoutX="34.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img21" layoutX="58.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img22" layoutX="82.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img23" layoutX="106.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                        <Pane fx:id="img24" layoutX="130.0" layoutY="10.0" prefHeight="24.0" prefWidth="24.0" style="-fx-border-color: #524e4e; -fx-background-color: #dbd3d3;">
-                           <opaqueInsets>
-                              <Insets right="5.0" />
-                           </opaqueInsets>
-                        </Pane>
-                     </children>
+                  <HBox fx:id="hb3" layoutY="66.0" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

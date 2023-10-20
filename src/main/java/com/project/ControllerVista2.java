@@ -4,11 +4,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 public class ControllerVista2 implements Initializable {
@@ -16,12 +23,13 @@ public class ControllerVista2 implements Initializable {
     Button vista0 = new Button();
 
     @FXML
-    Pane img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12 = new Pane();
+    AnchorPane anchor1;
 
     @FXML
-    Pane img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24 = new Pane();
+    HBox hb, hb2, hb3 = new HBox();
 
-    List<Pane> list = new ArrayList<Pane>();
+    List<ImageView> list = new ArrayList<ImageView>();
+    int num;
 
     @FXML
     public void firstView(ActionEvent event) {
@@ -30,7 +38,14 @@ public class ControllerVista2 implements Initializable {
 
     @FXML
     public void carregarImg(ActionEvent event) {
-        
+        for (int i = 0; i < list.size(); i++) {
+            num = i;
+            final int pos = i;
+            loadImageBackground((image) -> {
+                System.out.println("Image loaded");
+                list.get(pos).setImage(image);
+            });
+        }
     }
 
     @FXML
@@ -38,31 +53,52 @@ public class ControllerVista2 implements Initializable {
         
     }
 
+    public void loadImageBackground(Consumer<Image> callBack) {
+        CompletableFuture<Image> futureImage = CompletableFuture.supplyAsync(() -> {
+            try {
+                // Wait a second to simulate a long loading time
+                Thread.sleep(1000);
+
+                // Load the data from the assets file
+                Image image = new Image(getClass().getResource("/assets/img/img"+Integer.toString(num)).toString());
+                return image;
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                return null;
+            }
+        })
+        .exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
+        });
+
+        futureImage.thenAcceptAsync(result -> {
+            callBack.accept(result);
+        }, Platform::runLater);
+    }
+    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        list.add(img1);
-        list.add(img2);
-        list.add(img3);
-        list.add(img4);
-        list.add(img5);
-        list.add(img6);
-        list.add(img7);
-        list.add(img8);
-        list.add(img9);
-        list.add(img10);
-        list.add(img11);
-        list.add(img12);
-        list.add(img13);
-        list.add(img14);
-        list.add(img15);
-        list.add(img16);
-        list.add(img17);
-        list.add(img18);
-        list.add(img19);
-        list.add(img20);
-        list.add(img21);
-        list.add(img22);
-        list.add(img23);
-        list.add(img24);
+        for (int i = 1; i <= 3; i++) {
+            for (int e = 1; e <= 8; e++) {
+            // Crear ImageView y asignar la imagen
+            ImageView img1 = new ImageView();
+            img1.setFitHeight(15);
+            img1.setFitWidth(15);
+            list.add(img1);
+            // Agregar el ImageView al HBox
+            if (i == 1){
+
+                hb.getChildren().add(img1);
+            } else if (i == 2) {
+                hb2.getChildren().add(img1);
+            } else if (i == 3) {
+                hb3.getChildren().add(img1);
+            }
+            }
+        }
+
     }
 }

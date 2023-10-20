@@ -1,5 +1,6 @@
 package com.project;
 
+import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -118,7 +119,7 @@ public class ControllerVista1{
                               //Verde Potente
                             progress1.setStyle("-fx-accent: #17731c;");
                         }
-                        tasca1.setText("Tasca1 "+Float.toString(progress)+":");
+                        tasca1.setText("Tasca1, "+Float.toString(progress*100)+"%:");
 
                         if (progress >= 1) {
                             action1.setText("Recargar");
@@ -144,6 +145,7 @@ public class ControllerVista1{
             return; // Sale del método
         }
           //Si no pues la iniciamos
+        Random r = new Random();
         tareaEnEjecucion2 = true;
         tasca2.setText("Tasca2");
         action2.setText("Aturar");
@@ -152,6 +154,8 @@ public class ControllerVista1{
             try{
                 progress2.setProgress(0);
                 for (float i = 0; i <= 100 && tareaEnEjecucion2; i++) {
+                    int p = r.nextInt(3) + 2;
+                    i += p;
                     final float progress = i/100;
                       //Actualitzar la barra de progres
                     //Colorines
@@ -189,14 +193,15 @@ public class ControllerVista1{
                               //Verde Potente
                             progress2.setStyle("-fx-accent: #17731c;");
                         }
-
+                        tasca2.setText("Tasca2, "+Float.toString(progress*100)+"%:");
                         if (progress >= 1) {
                             action2.setText("Iniciar");
                             tasca2.setText("Tasca2 - Done");
                             tareaEnEjecucion2 = false;
                         }
                     });
-                    Thread.sleep(80);
+                    
+                    Thread.sleep((r.nextInt(3) + 3)*1000);
                 }
             } catch (Exception e) {e.printStackTrace();}
         });
@@ -212,6 +217,7 @@ public class ControllerVista1{
             return;
         }
 
+        Random r = new Random();
         action3.setText("Aturar");
         tasca3.setText("Tasca3");
         tareaEnEjecucion3 = true;
@@ -219,6 +225,8 @@ public class ControllerVista1{
             try{
                 progress3.setProgress(0);
                 for (float i = 0; i <= 100 && tareaEnEjecucion3; i++) {
+                    int p = r.nextInt(3) + 4;
+                    i += p;
                     final float progress = i/100;
                       //Actualitzar la barra de progres
                     //Colorines
@@ -250,14 +258,14 @@ public class ControllerVista1{
                               //Verde Potente
                             progress3.setStyle("-fx-accent: #17731c;");
                         }
-
+                        tasca3.setText("Tasca3, "+Float.toString(progress*100)+"%:");
                         if (progress >= 1) {
                             action3.setText("Iniciar");
                             tasca3.setText("Tasca3 - Done");
                             tareaEnEjecucion3 = false;
                         }
                     });
-                    Thread.sleep(60);
+                    Thread.sleep((r.nextInt(6) + 3)*1000);
                 }
             } catch (Exception e) {e.printStackTrace();}
         });
