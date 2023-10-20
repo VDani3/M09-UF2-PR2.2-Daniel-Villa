@@ -17,7 +17,7 @@ import javafx.scene.layout.AnchorPane;
 
 
 public class ControllerVista1{
-    
+
     @FXML
     Button vista1 = new Button();
 
@@ -57,13 +57,30 @@ public class ControllerVista1{
     private ExecutorService executor2 = Executors.newFixedThreadPool(1);
     private ExecutorService executor3 = Executors.newFixedThreadPool(1);
 
+      //Verificar si esta en ejecucion
+    private boolean tareaEnEjecucion = false;
+    private boolean tareaEnEjecucion2 = false;
+    private boolean tareaEnEjecucion3 = false;
+
     @FXML
     private void execute1(ActionEvent event) {
+         //Comprobamos si ya se esta ejecutando, en caso afirmativo la paramos
+        if (tareaEnEjecucion) {
+            // Detén la tarea
+            tareaEnEjecucion = false;
+            action1.setText("Iniciar");
+            tasca1.setText("Tasca1 - Pause");
+            return; // Sale del método
+        }
+
+          //Si no pues la iniciamos
         tasca1.setText("Tasca1");
+        action1.setText("Aturar");
+        tareaEnEjecucion = true;
         executor.submit(() -> {
             try{
                 progress1.setProgress(0);
-                for (float i = 0; i <= 100; i++) {
+                for (float i = 0; i <= 100 && tareaEnEjecucion; i++) {
                     final float progress = i/100;
                       //Actualitzar la barra de progres
                     //Colorines
@@ -101,13 +118,15 @@ public class ControllerVista1{
                               //Verde Potente
                             progress1.setStyle("-fx-accent: #17731c;");
                         }
+                        tasca1.setText("Tasca1 "+Float.toString(progress)+":");
 
                         if (progress >= 1) {
                             action1.setText("Recargar");
-                            tasca1.setText("Tasca1 - Done");
+                            tasca1.setText(tasca1.getText()+" - Done");
+                            tareaEnEjecucion = false;
                         }
                     });
-                    Thread.sleep(40);
+                    Thread.sleep(1000);
                 }
             } catch (Exception e) {e.printStackTrace();}
         });
@@ -115,11 +134,24 @@ public class ControllerVista1{
 
     @FXML
     private void execute2(ActionEvent event) {
+
+         //Comprobamos si ya se esta ejecutando, en caso afirmativo la paramos
+        if (tareaEnEjecucion2) {
+            // Detén la tarea
+            tareaEnEjecucion2 = false;
+            action2.setText("Iniciar");
+            tasca2.setText("Tasca2 - Pause");
+            return; // Sale del método
+        }
+          //Si no pues la iniciamos
+        tareaEnEjecucion2 = true;
         tasca2.setText("Tasca2");
+        action2.setText("Aturar");
+
         executor2.submit(() -> {
             try{
                 progress2.setProgress(0);
-                for (float i = 0; i <= 100; i++) {
+                for (float i = 0; i <= 100 && tareaEnEjecucion2; i++) {
                     final float progress = i/100;
                       //Actualitzar la barra de progres
                     //Colorines
@@ -159,8 +191,9 @@ public class ControllerVista1{
                         }
 
                         if (progress >= 1) {
-                            action2.setText("Recargar");
+                            action2.setText("Iniciar");
                             tasca2.setText("Tasca2 - Done");
+                            tareaEnEjecucion2 = false;
                         }
                     });
                     Thread.sleep(80);
@@ -171,11 +204,21 @@ public class ControllerVista1{
 
     @FXML
     private void execute3(ActionEvent event) {
+
+        if (tareaEnEjecucion3 == true) {
+            tasca3.setText("Tasca3 - Pause");
+            action3.setText("Iniciar");
+            tareaEnEjecucion3 = false;
+            return;
+        }
+
+        action3.setText("Aturar");
         tasca3.setText("Tasca3");
+        tareaEnEjecucion3 = true;
         executor3.submit(() -> {
             try{
                 progress3.setProgress(0);
-                for (float i = 0; i <= 100; i++) {
+                for (float i = 0; i <= 100 && tareaEnEjecucion3; i++) {
                     final float progress = i/100;
                       //Actualitzar la barra de progres
                     //Colorines
@@ -209,8 +252,9 @@ public class ControllerVista1{
                         }
 
                         if (progress >= 1) {
-                            action3.setText("Recargar");
+                            action3.setText("Iniciar");
                             tasca3.setText("Tasca3 - Done");
+                            tareaEnEjecucion3 = false;
                         }
                     });
                     Thread.sleep(60);

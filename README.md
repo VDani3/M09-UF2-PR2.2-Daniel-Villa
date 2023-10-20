@@ -2,7 +2,7 @@
 Daniel Villa Carmona
 
 # Recorda cambiar la versió de Java en el Pom
-
+Les imatges son de la pagina pixabay, tot els drets de imatge als seus respectius creadors.
 
 ### Compilació i funcionament ###
 
