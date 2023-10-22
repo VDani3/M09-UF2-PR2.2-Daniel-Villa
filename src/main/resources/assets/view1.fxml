@@ -28,8 +28,8 @@
          <children>
             <Button fx:id="carregar" layoutX="77.0" layoutY="25.0" mnemonicParsing="false" onAction="#carregarImg" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #94f28f; -fx-border-color: #528f4f; -fx-border-radius: 8; -fx-border-width: 2;" text="Carregar" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="25.0" />
             <Button fx:id="aturar" layoutX="429.0" layoutY="25.0" mnemonicParsing="false" onAction="#aturarImg" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #fa9696; -fx-border-color: #a65656; -fx-border-radius: 8; -fx-border-width: 2;" text="Aturar" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="25.0" />
-            <Label layoutX="67.0" layoutY="95.0" text="Progrés" AnchorPane.bottomAnchor="189.00000000000003" AnchorPane.leftAnchor="67.0" />
-            <ProgressBar layoutX="67.0" layoutY="113.0" prefHeight="24.0" prefWidth="444.0" progress="0.0" style="-fx-accent: #859624;" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="113.0" />
+            <Label fx:id="progres" layoutX="67.0" layoutY="95.0" text="Progrés" AnchorPane.bottomAnchor="189.00000000000003" AnchorPane.leftAnchor="67.0" />
+            <ProgressBar fx:id="pb1" layoutX="67.0" layoutY="113.0" prefHeight="24.0" prefWidth="444.0" progress="0.0" style="-fx-accent: blue;" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="113.0" />
             <AnchorPane fx:id="anchor1" layoutX="69.0" layoutY="152.0" prefHeight="143.0" prefWidth="454.0">
                <children>
                   <HBox fx:id="hb" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
@@ -37,12 +37,12 @@
                         <Insets />
                      </opaqueInsets>
                   </HBox>
-                  <HBox fx:id="hb2" layoutY="33.0" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
+                  <HBox fx:id="hb2" layoutY="48.0" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </HBox>
-                  <HBox fx:id="hb3" layoutY="66.0" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
+                  <HBox fx:id="hb3" layoutY="96.0" prefHeight="24.0" prefWidth="454.0" spacing="10.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
