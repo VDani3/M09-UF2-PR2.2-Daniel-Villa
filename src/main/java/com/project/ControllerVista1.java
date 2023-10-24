@@ -1,3 +1,4 @@
+//Fet per Daniel Villa
 package com.project;
 
 import java.util.Random;
@@ -51,8 +52,12 @@ public class ControllerVista1{
 
     @FXML
     private void nextView(ActionEvent event) {
-        UtilsViews.setViewAnimating("Normal2");
+        try{ 
+            UtilsViews.addView(getClass(), "Normal1", "/assets/view1.fxml");
+            UtilsViews.setViewAnimating("Normal1");
+        } catch (Exception e) {}
     }
+
       //Nous Threads
     private ExecutorService executor = Executors.newFixedThreadPool(1);
     private ExecutorService executor2 = Executors.newFixedThreadPool(1);
@@ -123,7 +128,7 @@ public class ControllerVista1{
 
                         if (progress >= 1) {
                             action1.setText("Recargar");
-                            tasca1.setText(tasca1.getText()+" - Done");
+                            tasca1.setText("Tasca1 - Done");
                             tareaEnEjecucion = false;
                         }
                     });

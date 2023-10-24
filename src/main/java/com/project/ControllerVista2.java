@@ -1,3 +1,4 @@
+//Fet per Daniel Villa
 package com.project;
 
 import java.net.URL;
@@ -46,12 +47,15 @@ public class ControllerVista2 implements Initializable {
 
     @FXML
     public void firstView(ActionEvent event) {
+        UtilsViews.controllers.remove(1);
         UtilsViews.setViewAnimating("Normal");
     }
 
     @FXML
     public void carregarImg(ActionEvent event) {
-        reiniciar();
+        if (completed != 0 || isCharging) {
+            reiniciar();
+        }
         progres.setText(String.format("Progres, %s de 24:", completed));
         isCharging = true;
         for (int i = 0; i < list.size(); i++) {
@@ -93,12 +97,10 @@ public class ControllerVista2 implements Initializable {
                 return image;
 
             } catch (InterruptedException e) {
-                e.printStackTrace();
                 return null;
             }
         })
         .exceptionally(ex -> {
-            ex.printStackTrace();
             return null;
         });
 
@@ -131,14 +133,10 @@ public class ControllerVista2 implements Initializable {
     }
 
     public void reiniciar() {
-        isCharging = false;
-        progres.setText("Progres");
-        for (int i = 0; i < list.size(); i++) {
-            num = i+1;
-            final int pos = i;
-            list.get(pos).setImage(null);
-        }
-        pb1.setProgress(0);
-        completed = 0;
+        try{ 
+            int num = UtilsViews.controllers.size();
+            UtilsViews.addView(getClass(), "Normal"+Integer.toString(num), "/assets/view1.fxml");
+            UtilsViews.setView("Normal"+Integer.toString(num));
+        } catch (Exception e) {}
     }
 }
